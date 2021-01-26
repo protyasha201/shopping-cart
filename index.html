@@ -25,9 +25,9 @@
 
                      <div class="col-md-5 center-item">
                         <div class="input-group number-spinner">
-                           <button class="btn btn-default"><i class="fas fa-minus"></i></button>
-                           <input type="text" class="form-control text-center" value="1">
-                           <button class="btn btn-default"><i class="fas fa-plus"></i></button>
+                           <button id="decreasePhone" class="btn btn-default"><i class="fas fa-minus"></i></button>
+                           <input id="phoneQuantity" type="text" class="form-control text-center" value="1">
+                           <button id="increasePhone" class="btn btn-default"><i class="fas fa-plus"></i></button>
                         </div>
                         <h5>$1219</h5>
                         <img src="images/remove.png" alt="" class="remove-item">
@@ -77,6 +77,30 @@
          </div>
       </div>
    </section>
+
+   //javascript Code.
+   <script>
+
+      // decrease Phone Quantity
+      const decreasePhone = document.getElementById("decreasePhone");
+      decreasePhone.addEventListener("click", () => {
+         const phoneQuantity = document.getElementById("phoneQuantity").value;
+         const phoneQuantityNumber = parseInt(phoneQuantity);
+         const presentQuantity = phoneQuantityNumber - 1;
+         if (presentQuantity >= 0) {
+            const currentQuantity = document.getElementById("phoneQuantity").value = presentQuantity;
+         }
+      })
+
+      //Increase Phone Quantity.
+      const increasePhone = document.getElementById("increasePhone");
+      increasePhone.addEventListener("click", () => {
+         const phoneQuantity = document.getElementById("phoneQuantity").value;
+         const phoneQuantityNumber = parseInt(phoneQuantity);
+         const presentQuantity = phoneQuantityNumber + 1;
+         const currentQuantity = document.getElementById("phoneQuantity").value = presentQuantity;
+      })
+   </script>
 </body>
 
 </html>
