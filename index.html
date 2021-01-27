@@ -43,12 +43,12 @@
                      </div>
                      <div class="col-md-5 center-item">
                         <div class="input-group number-spinner">
-                           <button class="btn btn-default"><i class="fas fa-minus"></i></button>
-                           <input type="text" class="form-control text-center" value="1">
-                           <button class="btn btn-default"><i class="fas fa-plus"></i></button>
+                           <button id="decreaseCase" class="btn btn-default"><i class="fas fa-minus"></i></button>
+                           <input id="caseQuantity" type="text" class="form-control text-center" value="1">
+                           <button id="increaseCase" class="btn btn-default"><i class="fas fa-plus"></i></button>
 
                         </div>
-                        <h5>$59</h5>
+                        <h5>$ <span id="casePrice">59</span></h5>
                         <img src="images/remove.png" alt="" class="remove-item">
                      </div>
                   </div>
@@ -75,6 +75,12 @@
                </div>
             </div>
          </div>
+      </div>
+   </section>
+
+   <section>
+      <div>
+         <h1>Your Order Has Been Added Successfully.</h1>
       </div>
    </section>
 
@@ -164,6 +170,95 @@
             //showing result.
             const totalPhonePrice = document.getElementById("phonePrice").innerText = currentPhonePrice;
             const currentQuantity = document.getElementById("phoneQuantity").value = presentQuantity;
+            const mainSubTotal = document.getElementById("subTotal").innerText = currentSubTotal;
+            const mainTotal = document.getElementById("total").innerText = currentTotal;
+         }
+      })
+
+
+      // decrease case Quantity
+      const decreaseCase = document.getElementById("decreaseCase");
+
+      //decrease click handler
+      decreaseCase.addEventListener("click", () => {
+         //Quantity decreasing
+         const caseQuantity = document.getElementById("caseQuantity").value;
+         if (caseQuantity > 0) {
+            const caseQuantityNumber = parseInt(caseQuantity);
+            const presentQuantity = caseQuantityNumber - 1;
+
+            //Price setting with decreasing.
+            const perCase = document.getElementById("casePrice").innerText;
+            const perCasePrice = parseInt(perCase);
+            const priceOfCase = 59;
+            const currentCasePrice = perCasePrice - priceOfCase;
+
+            //subtotal.
+            const subTotal = document.getElementById("subTotal");
+
+            //increasing subtotal.
+            const defaultSubTotal = subTotal.innerText;
+            const subTotalPrice = parseInt(defaultSubTotal);
+            const subTotalNumber = 59;
+            const currentSubTotal = subTotalPrice - subTotalNumber;
+
+            //Total.
+            const total = document.getElementById("total");
+
+            //decreasing Total.
+            const defaultTotal = total.innerText;
+            const totalPrice = parseInt(defaultTotal);
+            const totalNumber = 59;
+            const currentTotal = totalPrice - totalNumber;
+
+
+            //showing result
+            const currentQuantity = document.getElementById("caseQuantity").value = presentQuantity;
+            const totalCasePrice = document.getElementById("casePrice").innerText = currentCasePrice;
+            const mainSubTotal = document.getElementById("subTotal").innerText = currentSubTotal;
+            const mainTotal = document.getElementById("total").innerText = currentTotal;
+         }
+
+      })
+
+      //Increasing case Quantity.
+      const increaseCase = document.getElementById("increaseCase");
+
+      //increase click handler
+      increaseCase.addEventListener("click", () => {
+         //Quantity setting with increasing
+         const caseQuantity = document.getElementById("caseQuantity").value;
+         if (caseQuantity >= 0) {
+            const caseQuantityNumber = parseInt(caseQuantity);
+            const presentQuantity = caseQuantityNumber + 1;
+
+            //Price setting with increasing.
+            const perCase = document.getElementById("casePrice").innerText;
+            let perCasePrice = parseInt(perCase);
+            const priceOfCase = 59;
+            const currentCasePrice = perCasePrice + priceOfCase;
+
+            //subtotal.
+            const subTotal = document.getElementById("subTotal");
+
+            //increasing subtotal.
+            const defaultSubTotal = subTotal.innerText;
+            const subTotalPrice = parseInt(defaultSubTotal);
+            const subTotalNumber = 59;
+            const currentSubTotal = subTotalNumber + subTotalPrice;
+
+            //Total.
+            const total = document.getElementById("total");
+
+            //increasing total.
+            const defaultTotal = total.innerText;
+            const totalPrice = parseInt(defaultTotal);
+            const totalNumber = 59;
+            const currentTotal = totalNumber + totalPrice;
+
+            //showing result.
+            const totalCasePrice = document.getElementById("casePrice").innerText = currentCasePrice;
+            const currentQuantity = document.getElementById("caseQuantity").value = presentQuantity;
             const mainSubTotal = document.getElementById("subTotal").innerText = currentSubTotal;
             const mainTotal = document.getElementById("total").innerText = currentTotal;
          }
