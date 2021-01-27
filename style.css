@@ -53,3 +53,11 @@ body{
 	background-color: #2FBE70;
 	border: none;
 }
+#confirmation-text{
+	margin-top: 20%;
+	text-align: center;
+	display: none;
+}
+#confirmation-text h1{
+	color: #e18f6a;
+}
