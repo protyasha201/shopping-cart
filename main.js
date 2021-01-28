@@ -185,3 +185,17 @@ checkOut.addEventListener("click", () => {
     const confirmationMessage = document.getElementById("confirmation-text");
     confirmationMessage.style.display = "block";
 })
+
+
+//another way.
+
+{/* <script>
+      document.getElementById("increaseCase").addEventListener("click", () => {
+         const caseInput = document.getElementById("caseQuantity");
+         const caseCount = parseInt(caseInput.value);
+         const caseNewCount = caseCount + 1;
+         caseInput.value = caseNewCount;
+         const caseTotal = caseNewCount * 59;
+         document.getElementById("casePrice").innerText = caseTotal;
+      })
+   </script> */}
